@@ -32,7 +32,10 @@ namespace DotnetIteration
         //
         public static IEnumerable<string> Yelling(List<string> words)
         {
-            throw new System.NotImplementedException();
+
+            var upperCase = words.ConvertAll(value => value.ToUpper());
+            return upperCase;
+            //throw new System.NotImplementedException();
         }
 
 
@@ -43,7 +46,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var newDouble = numbers.Select(value => value * 2);
+            return newDouble;
+            //throw new System.NotImplementedException();
         }
 
 
@@ -55,7 +60,10 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> StringyIndexes(List<string> words)
         {
-            throw new System.NotImplementedException();
+
+            var stingyNewIndex = words.Select((word, index) => $"{word} is at index {index}");
+            return stingyNewIndex;
+            //throw new System.NotImplementedException();
         }
 
 
@@ -65,7 +73,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var theEvens = numbers.Where(value => value % 2 == 0);
+            return theEvens;
+            //throw new System.NotImplementedException();
         }
 
 
@@ -76,7 +86,9 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var evenIndex = numbers.Where((numbers, index) => index % 2 == 0);
+            return evenIndex;
+            //throw new System.NotImplementedException();
         }
 
 
@@ -95,7 +107,11 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> BestMovieOfTheYear(List<Movie> movies, int yearToMatch)
         {
-            throw new System.NotImplementedException();
+            var bestMovieAbove = movies.Where(value => ((value.Year == yearToMatch) && (value.Score > 90))).Select(value => value.Name);
+            return bestMovieAbove;
+
+
+            //throw new System.NotImplementedException();
         }
 
 
@@ -105,7 +121,9 @@ namespace DotnetIteration
         // 
         public static bool EveryoneIsOdd(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var trueOdd = numbers.Any(value => 2 != 0);
+            return trueOdd;
+            //throw new System.NotImplementedException();
         }
 
 
@@ -116,7 +134,10 @@ namespace DotnetIteration
         // 
         public static string FindTheNeedle(List<string> sentences)
         {
-            throw new System.NotImplementedException();
+
+            var findTheWord = sentences.First(value => value.Contains("needle"));
+            return findTheWord;
+            //throw new System.NotImplementedException();
         }
 
 
@@ -127,7 +148,10 @@ namespace DotnetIteration
         // 
         public static int FindTheNeedleIndex(List<string> sentences)
         {
-            throw new System.NotImplementedException();
+
+            var findIndexNeedle = sentences.FindIndex(value => value.Contains("needle"));
+            return findIndexNeedle;
+            //throw new System.NotImplementedException();
         }
 
 
@@ -138,7 +162,10 @@ namespace DotnetIteration
         // 
         public static bool SomeoneToLove(List<string> words)
         {
-            throw new System.NotImplementedException();
+
+            var fourCharactersLong = words.Any(value => value.Length == 4);
+            return fourCharactersLong;
+            //throw new System.NotImplementedException();
         }
     }
 }
